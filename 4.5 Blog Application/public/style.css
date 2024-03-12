@@ -1,0 +1,71 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 10px;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.display-posts {
+    width: inherit;
+    background-color: #ddd; /* Darker background for posts */
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex; /* Make children align horizontally */
+    align-items: center; /* Align children vertically */
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.blog-post {
+    font-weight: 200;
+    margin-right: 10px; /* Add spacing between post text and buttons */
+    flex-grow: 1; /* Allow post text to grow and fill remaining space */
+}
+
+.edit-form,
+.del-form {
+    display: flex; /* Display forms inline */
+}
+
+.del-btn {
+    background-color: #dc3545; /* Red color for delete button */
+    margin-left: 10px; /* Add spacing between buttons */
+}

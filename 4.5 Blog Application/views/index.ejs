@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Posts</h1>
+        <form class="add-form" action="/add" method="post">
+            <label for="blogPost">Add a new post:</label>
+            <input type="text" name="blogPost" id="blog-post">
+            <button type="submit">Add</button>
+        </form>
+        <% if(locals.posts && locals.posts.length > 0){ %>
+           <% locals.posts.forEach((post, index) => { %>
+            <div class="display-posts">
+                <p class="blog-post"><%= post %></p>
+                <form  class="edit-form" action="/edit/<%= index %>" method="post">
+                    <input type="text" name="editedPost" placeholder="Edit" required>
+                    <button type="submit">Edit</button>
+                </form>
+                <form class="del-form" action="/delete/<%= index %>" method="post">
+                    <button class="del-btn" type="submit">Delete</button>
+                </form>
+            </div>
+               
+           <% }); %>
+            <% }else{ %>
+                <h1 class="heading">Add your posts here...</h1>
+                <% } %>
+               
+    </div>
+</body>
+</html>
